@@ -25,5 +25,11 @@ public class Pinch : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.Hands)){
                 previous.Invoke();
         }
+
+        if (Input.GetKeyDown("space"))
+        {
+            next.Invoke();
+            print("Key pressed Space");
+        }
     }
 }

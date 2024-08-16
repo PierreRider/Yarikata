@@ -12,19 +12,21 @@ public class stateMachineScript : MonoBehaviour
     public void Next(){
         if (animations[state] != null)
             animations[state].gameObject.SetActive(false);
+
         state++;
             
-            if (state > animations.Length){
+        if (state > animations.Length){
                 
-                state = 0;
+            state = 0;
                 
-            }
+        }
 
-            if (animations[state] != null)
+        if (animations[state] != null)
         {
 
             animations[state].gameObject.SetActive(true);
-            animations[state].StartPlayback();
+            //animations[state].StartPlayback();
+            //animations[state].Play("1");
         }
 
     }
