@@ -10,16 +10,23 @@ public class stateMachineScript : MonoBehaviour
     int state = 0 ;
 
     public void Next(){
+        if (animations[state] != null)
+            animations[state].gameObject.SetActive(false);
+        state++;
             
-             animations[state].StartPlayback();
-            state++;
-
             if (state > animations.Length){
                 
                 state = 0;
                 
             }
-            
+
+            if (animations[state] != null)
+        {
+
+            animations[state].gameObject.SetActive(true);
+            animations[state].StartPlayback();
+        }
+
     }
     // Start is called before the first frame update
     void Start()
